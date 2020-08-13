@@ -1,9 +1,9 @@
 from django.contrib import admin
+from course.models import Courses
+from teacher.models import Teacher
 from .models import (
         Student,
-        Teacher,
         Classroom,
-        Courses,
         )
 # Register your models here.
 admin.site.register(Student)

@@ -12,23 +12,14 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Classroom',
+            name='Teacher',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name_number', models.IntegerField()),
-                ('capacity', models.IntegerField()),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Student',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name_student', models.CharField(max_length=20)),
+                ('name_teacher', models.CharField(max_length=20)),
                 ('surname', models.CharField(max_length=20)),
                 ('age', models.IntegerField()),
                 ('dni', models.SlugField()),
-                ('user_student', models.CharField(max_length=20)),
-                ('date_creation_student', models.DateField(auto_now=True)),
+                ('date_creation_teacher', models.DateField(auto_now=True)),
                 ('gender', models.BooleanField()),
             ],
         ),
