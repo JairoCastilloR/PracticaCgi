@@ -29,7 +29,7 @@ class CoursesUpdateView(UpdateView):
                 'capacity_curse',
                 'credits',
                 ]
-    template_name_suffix = '_update_form'
+    #template_name_suffix = '_update_form'
 class CoursesDeleteView(DeleteView):
     model =Courses
     succes_url = reverse_lazy('course:course-list')
