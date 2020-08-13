@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+  Actualizar Docente
+{% endblock %}
+{% block body %}
+<h1> Actualizar datos del docente </h1>
+<form method='POST' class="teacher"> {% csrf_token %}
+  {{form.as_p}}
+  <input type='submit' value='Actualizar'/>
+</form>
+{% endblock %}

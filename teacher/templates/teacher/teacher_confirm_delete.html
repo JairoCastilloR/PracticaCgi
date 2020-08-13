@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+  Despidos
+{% endblock %}
+{% block body %}
+<h1> Despedir a: </h1>
+<h2> {{ object.lastName }}, {{ object.name }} </h2>
+
+<br>
+<p> {{ object.image }} </p>
+<br>
+
+<form method='POST' class="student" > {% csrf_token %}
+  Esta seguro?
+  <input type='submit' value='Despedir'/>
+</form>
+{% endblock %}

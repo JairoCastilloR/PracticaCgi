@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+  Detalles del Docente
+{% endblock %}
+{% block body %}
+<h1> Detalles del docente </h1>
+<h3> {{ object.lastName }}, {{ object.name }} </h3>
+
+<br>
+<p> {{ object.image }} </p>
+<br>
+
+<h4>DNI</h4>
+<p>{{ object.dni }}</p>
+
+<h4>Curso que dicta</h4>
+  <p>
+    {{ object.course}}
+  </p>
+
+    <a href="{% url 'teacher-update' object.id %}">
+      {% block button %}
+        Actualizar
+      {% endblock %}
+    </a>
+
+    <a href="{% url 'teacher-delete' object.id %}">
+      {% block button %}
+        Despedir
+      {% endblock %}
+    </a>
+
+{% endblock %}
