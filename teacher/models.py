@@ -1,5 +1,6 @@
 from django.db import models
 from course.models import Courses
+from django.urls import reverse
 # Create your models here.
 class Teacher(models.Model):
 
@@ -19,6 +20,9 @@ class Teacher(models.Model):
   #image
   def __str__(self):
       return self.name_teacher
+
+  def get_absolute_url (self):
+      return reverse('teacher:teacher-detail', kwargs = { 'pk': self.id})
 
 
 

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+  Expulsiones
+{% endblock %}
+{% block body %}
+<h1> Expulsar a: </h1>
+<h2> {{ object.lastName }}, {{ object.name }} </h2>
+<p>
+  Edad: {{ object.age }} años.
+</p>
+
+<br>
+<p> {{ object.image }} </p>
+<br>
+
+<form method='POST' class="student" > {% csrf_token %}
+  Esta seguro?
+  <input type='submit' value='Expulsar'/>
+</form>
+{% endblock %}

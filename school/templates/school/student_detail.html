@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+  Detalles del Estudiante
+{% endblock %}
+{% block body %}
+<h1> Detalles del alumno </h1>
+<h3> {{ object.lastName }}, {{ object.name }} </h3>
+<br>
+<p> {{ object.image }} </p>
+<br>
+<p>
+  Edad: {{ object.age }} años.
+</p>
+
+<h4> DNI </h4>
+<p>{{ object.dni }}</p>
+
+<h4> Genero </h4>
+<p>{{ object.gender }}</p>
+
+<h4> Cursos </h4>
+{% for instance in object.course %}
+  <p>
+    {{ instance.id }} -
+    <a href='{{ instance.get_absolute_url }}'>{{ instance.name }}</a>
+  </p>
+{% endfor %}
+
+    <a href="{% url 'student-update' object.id %}">
+      {% block button %}
+        Actualizar
+      {% endblock %}
+    </a>
+
+    <a href="{% url 'student-delete' object.id %}">
+      {% block button %}
+        Expulsar
+      {% endblock %}
+    </a>
+
+{% endblock %}

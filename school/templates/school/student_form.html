@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+  Matricula de Alumnos
+{% endblock %}
+{% block body %}
+<h1> Datos del alumno: </h1>
+<form method='POST' class="student" > {% csrf_token %}
+  {{form.as_p}}
+  <input type='submit' value='Matricular'/>
+</form>
+{% endblock %}

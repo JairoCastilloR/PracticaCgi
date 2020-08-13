@@ -23,7 +23,6 @@ class TeacherCreateView(CreateView):
             'age',
             'dni',
             'courses',
-            'date_creation',
             'gender',
             ]
 class TeacherUpdateView(UpdateView):
